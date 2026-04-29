@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<title>Beats</title>
+<!-- FONTES -->
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+  <div class="logo">NIGGUSTA</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="beats.html">Beats</a>
+  </nav>
+</header>
+
+<h1 class="title">Beats disponíveis</h1>
+
+<div class="filters">
+  <button onclick="filterBeats('all')">Todos</button>
+  <button onclick="filterBeats('trap')">Trap</button>
+  <button onclick="filterBeats('funk')">Funk</button>
+  <button onclick="filterBeats('drill')">Drill</button>
+  <button onclick="filterBeats('rnb')">RnB</button>
+</div>
+<div id="beatsGrid" class="beats-grid"></div>
+
+<script src="js/script.js"></script>
+</body>
+</html>
