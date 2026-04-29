@@ -1,76 +1,89 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<title>Niggusta</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Niggusta</title>
 
-<!-- FONTES -->
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
-<!-- CSS -->
-<link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
 <header>
-  <div class="logo">NIGGUSTA</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="beats.html">Beats</a>
-  </nav>
+    <div class="container-header">
+        <div class="logo">NIGGUSTA</div>
+        
+        <nav class="nav-menu">
+            <a href="index.html">Home</a>
+            <a href="beats.html">Beats</a>
+        </nav>
+
+        <div class="menu-toggle" id="mobile-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </div>
 </header>
 
 <section class="hero">
+    <div class="hero-content">
+        <div class="hero-img">
+            <img src="assets/logo.png" alt="Logo">
+        </div>
 
-  <div class="hero-img">
-    <img src="assets/logo.png" alt="Logo">
-  </div>
+        <h1 class="hero-title">
+            BEATS PARA ARTISTAS DE ALTO NÍVEL
+        </h1>
 
-  <h2 class="hero-title">
-    BEATS PARA ARTISTAS DE ALTO NÍVEL
-  </h2>
+        <p class="hero-text">
+            Produção profissional com qualidade premium para elevar seu som ao próximo nível.
+        </p>
 
-  <p class="hero-text">
-    Produção profissional com qualidade premium para elevar seu som ao próximo nível.
-  </p>
-
-  <!-- BOTÃO CORRIGIDO -->
-  <a href="beats.html" class="btn">Explorar Beats →</a>
-
+        <a href="beats.html" class="btn">Explorar Beats →</a>
+    </div>
 </section>
 
 <section class="features">
-  <h2 class="section-title">Por que escolher nossos beats</h2>
+    <div class="container">
+        <h2 class="section-title">Por que escolher meus beats</h2>
 
-  <div class="grid">
-    <div>
-      <h3>Qualidade profissional</h3>
-      <p>Mixagem e masterização com padrão de estúdio</p>
-    </div>
+        <div class="grid">
+            <div class="feature-card">
+                <h3>Qualidade profissional</h3>
+                <p>Esses beats postados são apenas demonstrações autorais, minha intenção é criar novos beats com as suas ideias.</p>
+            </div>
 
-    <div>
-      <h3>Entrega instantânea</h3>
-      <p>Receba seus beats imediatamente após a compra</p>
-    </div>
+            <div class="feature-card">
+                <h3>Entrega instantânea</h3>
+                <p>Receba seus beats imediatamente após a compra.</p>
+            </div>
 
-    <div>
-      <h3>Variedade de estilos</h3>
-      <p>Trap, funk, drill e RnB adaptados ao seu estilo</p>
+            <div class="feature-card">
+                <h3>Variedade de estilos</h3>
+                <p>Trap, funk, drill e RnB adaptados ao seu estilo.</p>
+            </div>
+        </div>
     </div>
-  </div>
 </section>
 
 <section class="cta">
-  <h2 class="section-title">Pronto para elevar sua música?</h2>
-
-  <!-- BOTÃO CORRIGIDO -->
-  <a href="beats.html" class="btn">Ver todos os beats →</a>
+    <div class="container">
+        <h2 class="section-title">Pronto para elevar sua música?</h2>
+        <a href="beats.html" class="btn">Ver todos os beats →</a>
+    </div>
 </section>
 
 <footer>
-  © 2026 Niggusta Beats
+    <div class="container">
+        <p>© 2026 Niggusta Beats</p>
+    </div>
 </footer>
+
+<script src="js/script.js"></script>
 
 </body>
 </html>
