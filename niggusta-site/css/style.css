@@ -376,3 +376,58 @@ nav a.active{
 .insta:hover{
   color:#a78bfa;
 }
+
+/* AJUSTES PARA CELULAR (Mobile) com Efeitos */
+@media (max-width: 768px) {
+    .hero-img {
+        width: 280px;
+        height: 280px;
+        margin: 0 auto;
+        /* Mantém a animação de flutuar que você já tem no PC */
+        animation: float 4s ease-in-out infinite; 
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* Efeito de "Toque" (Simulando o Hover do PC) */
+    .hero-img:active {
+        transform: scale(1.05);
+        box-shadow: 
+            0 0 50px rgba(124, 58, 237, 0.8), 
+            0 0 100px rgba(124, 58, 237, 0.5);
+    }
+
+    /* Ajuste dos cards para celular */
+    .grid div {
+        max-width: 100%; /* Card ocupa a largura quase toda */
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    /* Efeito de toque nos cards e botões */
+    .feature-card:active, .btn:active {
+        transform: scale(0.98);
+        background: #6d28d9;
+    }
+
+    .hero-title {
+        font-size: 26px;
+        padding: 0 15px;
+        line-height: 1.2;
+    }
+
+    /* Garante que o menu e header fiquem organizados */
+    header {
+        flex-direction: column;
+        padding: 15px;
+        text-align: center;
+    }
+
+    nav {
+        margin-top: 15px;
+    }
+
+    nav a {
+        margin: 0 10px;
+        font-size: 14px;
+    }
+}
