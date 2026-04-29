@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const beats = [
+    { name: "Type Don Toliver - Cobraz", type: "trap", image: "assets/beats/img200.jpg", audio: "assets/audio/BEAT COBRAZ.wav" },
     { name: "Rage Trap Dist", type: "trap", image: "assets/beats/img119.jpg", audio: "assets/audio/trap futurista 155.wav" },
     { name: "Trap Snare - Kisses", type: "trap", image: "assets/beats/img118.jpg", audio: "assets/audio/TRAP FERKIIK.wav" },
     { name: "Hoodtrap", type: "trap", image: "assets/beats/img33.jpg", audio: "assets/audio/HOODTRAP.wav" },
