@@ -16,29 +16,45 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Ye Dril no love", type: "drill", image: "assets/beats/img113.jpg", audio: "assets/audio/drill.mp3" },
     { name: "Type TrapFunk Gold", type: "funk", image: "assets/beats/img114.jpg", audio: "assets/audio/funkreggaeton.mp3" },
     { name: "Plugg Type Robin", type: "trap", image: "assets/beats/img115.png", audio: "assets/audio/pluggg wav.wav" },
-    { name: "LowTrap Vibes", type: "trap", image: "assets/beats/img115.png", audio: "assets/audio/beatlento.wav" },
+    { name: "LowTrap Vibes", type: "trap", image: "assets/beats/img116.jpg", audio: "assets/audio/beatlento.wav" },
+    { name: "SlowTrap Again", type: "drill", image: "assets/beats/img117.jpg", audio: "assets/audio/slowtrap 99bpm 9d10.wav" },
   ];
 
   const grid = document.getElementById("beatsGrid");
+
   let currentAudio = null;
   let currentBtn = null;
-  
-  // --- LÓGICA DA INTRO ---
-  let introAudio = new Audio('assets/audio/HOODTRAP ROCKSTAR.wav'); // Escolha o arquivo da intro
-  introAudio.volume = 0.20; // Volume baixo (15%)
+
+  // =========================
+  // INTRO GLOBAL (CORRIGIDO)
+  // =========================
+  let introAudio = new Audio("assets/audio/HOODTRAP ROCKSTAR.wav");
+  introAudio.volume = 0.2;
   introAudio.loop = true;
 
-  const iniciarIntro = () => {
-    introAudio.play().catch(() => {
-      // Se falhar (bloqueio do navegador), tenta de novo no primeiro clique
-      document.addEventListener('click', () => {
-        if(introAudio) introAudio.play();
-      }, { once: true });
-    });
-  };
-  iniciarIntro();
-  // ------------------------
+  function startIntro() {
+    const isBeatsPage = window.location.pathname.includes("beats");
 
+    if (isBeatsPage) return; // NÃO toca na página beats
+
+    introAudio.play().catch(() => {
+      document.addEventListener("click", () => introAudio.play(), { once: true });
+    });
+  }
+
+  startIntro();
+
+  function stopIntro() {
+    if (introAudio) {
+      introAudio.pause();
+      introAudio.currentTime = 0;
+      introAudio = null;
+    }
+  }
+
+  // =========================
+  // FORMAT TIME
+  // =========================
   function formatTime(sec) {
     if (!sec) return "0:00";
     const m = Math.floor(sec / 60);
@@ -46,6 +62,9 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${m}:${s}`;
   }
 
+  // =========================
+  // STOP AUDIO
+  // =========================
   function stopCurrentAudio() {
     if (currentAudio) {
       currentAudio.pause();
@@ -56,10 +75,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function renderBeats(list) {
+  // =========================
+  // RENDER BEATS
+  // =========================
+  function render(list) {
     grid.innerHTML = "";
 
-    list.forEach(beat => {
+    list.forEach((beat) => {
       const card = document.createElement("div");
       card.className = "beat-card";
 
@@ -90,12 +112,11 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       btn.onclick = () => {
-        // Quando der play em QUALQUER beat, mata a música de fundo
-        if (introAudio) {
-          introAudio.pause();
-          introAudio = null; // Remove da memória para não tocar mais
-        }
 
+        // 🔥 PARA INTRO NA PRIMEIRA INTERAÇÃO
+        stopIntro();
+
+        // troca música
         if (currentAudio && currentAudio !== audio) {
           stopCurrentAudio();
         }
@@ -111,15 +132,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       };
 
+      audio.addEventListener("timeupdate", () => {
+        progress.value = (audio.currentTime / audio.duration) * 100 || 0;
+        current.textContent = formatTime(audio.currentTime);
+      });
+
       audio.addEventListener("ended", () => {
         btn.textContent = "▶";
         progress.value = 0;
         current.textContent = "0:00";
-      });
-
-      audio.addEventListener("timeupdate", () => {
-        progress.value = (audio.currentTime / audio.duration) * 100 || 0;
-        current.textContent = formatTime(audio.currentTime);
       });
 
       progress.addEventListener("input", () => {
@@ -130,14 +151,19 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  window.filterBeats = function(type) {
+  // =========================
+  // FILTER
+  // =========================
+  window.filterBeats = function (type) {
     stopCurrentAudio();
+
     if (type === "all") {
-      renderBeats(beats);
+      render(beats);
     } else {
-      renderBeats(beats.filter(b => b.type === type));
+      render(beats.filter(b => b.type === type));
     }
   };
 
-  renderBeats(beats);
+  // INIT
+  render(beats);
 });

@@ -38,23 +38,18 @@ nav a:hover{
   padding:100px 20px;
 }
 
-/* IMAGEM */
 .hero-img{
   width:480px;
   height:480px;
   margin:0 auto;
-
   border-radius:50%;
   position:relative;
-
   display:flex;
   align-items:center;
   justify-content:center;
-
   box-shadow:
     0 0 40px rgba(124,58,237,0.5),
     0 0 80px rgba(124,58,237,0.3);
-
   animation: float 4s ease-in-out infinite;
 }
 
@@ -75,18 +70,13 @@ nav a:hover{
   border-radius:50%;
 }
 
-/* TÍTULO */
 .hero-title{
   font-family:'Orbitron', sans-serif;
   font-size:36px;
   font-weight:700;
-  letter-spacing:1px;
-
-  color:#fff;
   margin-top:30px;
 }
 
-/* TEXTO */
 .hero-text{
   color:#9ca3af;
   font-size:16px;
@@ -101,19 +91,14 @@ nav a:hover{
   border-radius:10px;
   color:#fff;
   text-decoration:none;
-
   font-weight:500;
-
   transition:0.3s;
-
   box-shadow:0 0 15px rgba(124,58,237,0.4);
 }
 
 .btn:hover{
   transform:scale(1.05);
-  box-shadow:
-    0 0 25px rgba(124,58,237,0.7),
-    0 0 50px rgba(124,58,237,0.4);
+  box-shadow:0 0 25px rgba(124,58,237,0.7);
 }
 
 /* SEÇÕES */
@@ -125,10 +110,9 @@ nav a:hover{
 .section-title{
   font-family:'Orbitron', sans-serif;
   font-size:28px;
-  margin-bottom:30px;
 }
 
-/* GRID */
+/* GRID GERAL */
 .grid{
   display:flex;
   gap:30px;
@@ -140,84 +124,20 @@ nav a:hover{
   background:#111;
   padding:25px;
   border-radius:12px;
-  transition:0.3s;
   max-width:250px;
+  transition:0.3s;
 }
 
 .grid div:hover{
   transform:translateY(-5px);
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  border-top:1px solid #111;
-  color:#6b7280;
-}
-
-/* ANIMAÇÃO */
-@keyframes float{
-  0%,100%{transform:translateY(0)}
-  50%{transform:translateY(-12px)}
-}
-
-/* página padrão */
-.page{
-  padding:60px 20px;
-  text-align:center;
-}
-
-/* link ativo */
-nav a.active{
-  color:#7c3aed;
-  font-weight:500;
-}
-
-/* título */
-.title{
-  font-family:'Orbitron', sans-serif;
-  font-size:28px;
-  margin-bottom:30px;
-}
-
-/* contato */
-.contact-container{
-  display:flex;
-  gap:40px;
-  justify-content:center;
-  align-items:flex-start;
-  flex-wrap:wrap;
-}
-
-.contact-form{
-  max-width:400px;
-  width:100%;
-}
-
-.contact-form input,
-.contact-form textarea{
-  width:100%;
-  padding:12px;
-  margin-bottom:12px;
-  background:#111;
-  border:1px solid #222;
-  color:#fff;
-  border-radius:8px;
-}
-
-.contact-form textarea{
-  min-height:120px;
-}
-
-.contact-info{
-  max-width:300px;
-  text-align:left;
-  color:#9ca3af;
-}
-
+/* FILTROS */
 .filters{
-  text-align:center;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+  gap:10px;
   margin-top:20px;
 }
 
@@ -226,7 +146,6 @@ nav a.active{
   color:#aaa;
   border:none;
   padding:10px 15px;
-  margin:5px;
   border-radius:20px;
   cursor:pointer;
   transition:0.3s;
@@ -237,15 +156,17 @@ nav a.active{
   color:#fff;
 }
 
-/* GRID DOS BEATS */
+/* =========================
+   BEATS GRID (DESKTOP)
+========================= */
+
 .beats-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns:repeat(4, minmax(0, 1fr));
   gap:25px;
   padding:40px;
 }
 
-/* CARD DO BEAT */
 .beat-card{
   background:#111;
   border-radius:12px;
@@ -255,26 +176,10 @@ nav a.active{
 }
 
 .beat-card:hover{
-  transform:translateY(-5px);
+  transform:translateY(-6px) scale(1.02);
+  box-shadow:0 10px 25px rgba(124,58,237,0.25);
 }
 
-/* IMAGEM DO BEAT */
-.beat-card img{
-  width:100%;
-  height:150px;
-  object-fit:cover;
-  border-radius:10px;
-  margin-bottom:10px;
-}
-
-/* NOME DO BEAT */
-.beat-card h3{
-  font-family:'Orbitron', sans-serif;
-  font-size:16px;
-  margin-bottom:10px;
-}
-
-/* IMAGEM COM OVERLAY */
 .beat-img{
   position:relative;
 }
@@ -286,7 +191,6 @@ nav a.active{
   border-radius:10px;
 }
 
-/* OVERLAY */
 .overlay{
   position:absolute;
   inset:0;
@@ -303,7 +207,6 @@ nav a.active{
   opacity:1;
 }
 
-/* BOTÃO PLAY */
 .play-btn{
   background:#7c3aed;
   border:none;
@@ -320,7 +223,6 @@ nav a.active{
   transform:scale(1.1);
 }
 
-/* PLAYER */
 .player{
   display:flex;
   align-items:center;
@@ -336,98 +238,70 @@ nav a.active{
   height:4px;
   background:#333;
   border-radius:10px;
-  cursor:pointer;
 }
 
-.progress::-webkit-slider-thumb{
-  appearance:none;
-  width:10px;
-  height:10px;
-  background:#7c3aed;
-  border-radius:50%;
+/* ANIMAÇÃO */
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-12px)}
 }
 
-/* CENTRALIZAR */
-.center{
-  text-align:center;
-}
+/* =========================
+   MOBILE (CORRIGIDO E SIMPLES)
+========================= */
 
-/* LINKS DE CONTATO */
-.contact-link{
-  display:block;
-  margin:15px 0;
-  font-size:18px;
-  color:#9ca3af;
-  text-decoration:none;
-  transition:0.3s;
-}
-
-/* HOVER PADRÃO */
-.contact-link:hover{
-  color:#fff;
-}
-
-/* INSTAGRAM COM DESTAQUE */
-.insta{
-  color:#7c3aed;
-  font-weight:500;
-}
-
-.insta:hover{
-  color:#a78bfa;
-}
-
-/* AJUSTES PARA CELULAR (Mobile) com Efeitos */
 @media (max-width: 768px) {
-    .hero-img {
-        width: 280px;
-        height: 280px;
-        margin: 0 auto;
-        /* Mantém a animação de flutuar que você já tem no PC */
-        animation: float 4s ease-in-out infinite; 
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
 
-    /* Efeito de "Toque" (Simulando o Hover do PC) */
-    .hero-img:active {
-        transform: scale(1.05);
-        box-shadow: 
-            0 0 50px rgba(124, 58, 237, 0.8), 
-            0 0 100px rgba(124, 58, 237, 0.5);
-    }
+  body {
+    font-size: 115%;
+  }
 
-    /* Ajuste dos cards para celular */
-    .grid div {
-        max-width: 100%; /* Card ocupa a largura quase toda */
-        width: 90%;
-        margin: 10px auto;
-    }
+  header {
+    flex-direction: column;
+    text-align: center;
+    gap: 10px;
+  }
 
-    /* Efeito de toque nos cards e botões */
-    .feature-card:active, .btn:active {
-        transform: scale(0.98);
-        background: #6d28d9;
-    }
+  nav a {
+    font-size: 16px;
+  }
 
-    .hero-title {
-        font-size: 26px;
-        padding: 0 15px;
-        line-height: 1.2;
-    }
+  .logo {
+    font-size: 22px;
+  }
 
-    /* Garante que o menu e header fiquem organizados */
-    header {
-        flex-direction: column;
-        padding: 15px;
-        text-align: center;
-    }
+  .hero-img {
+    width: 320px;
+    height: 320px;
+  }
 
-    nav {
-        margin-top: 15px;
-    }
+  .hero-title {
+    font-size: 30px;
+  }
 
-    nav a {
-        margin: 0 10px;
-        font-size: 14px;
-    }
+  /* 2 beats por linha no celular */
+  .beats-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .beat-card {
+    padding: 12px;
+  }
+
+  .beat-img img {
+    height: 160px;
+  }
+
+  .play-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .filters button {
+    font-size: 14px;
+    padding: 12px 16px;
+  }
 }
