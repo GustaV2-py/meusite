@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Trap Snare - Kisses", type: "trap", image: "assets/beats/img118.jpg", audio: "assets/audio/TRAP FERKIIK.wav" },
     { name: "Hoodtrap", type: "trap", image: "assets/beats/img33.jpg", audio: "assets/audio/HOODTRAP.wav" },
     { name: "Pills Trap vibes", type: "trap", image: "assets/beats/img55.jpg", audio: "assets/audio/slowtrap 99bpm 9d10.wav" },
+    { name: "Boombap - streets", type: "trap", image: "assets/beats/img200.jpg", audio: "assets/audio/beat boombap neww.wav" },
     { name: "DangerDrill", type: "drill", image: "assets/beats/img44.jpg", audio: "assets/audio/drillllll.wav" },
     { name: "Type BG - oldwave", type: "trap", image: "assets/beats/img10.jpg", audio: "assets/audio/future.mp3" },
     { name: "loving - rnb", type: "rnb", image: "assets/beats/img66.jpg", audio: "assets/audio/rnb niggusta.wav" },
