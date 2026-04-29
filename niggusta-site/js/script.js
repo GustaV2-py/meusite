@@ -1,23 +1,26 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const beats = [
-    { name: "BoomBap or Trap?", type: "trap", image: "assets/beats/img11.jpg", audio: "assets/audio/beat 1.mp3" },
-    { name: "Funk Bailão - Remix", type: "funk", image: "assets/beats/img22.jpg", audio: "assets/audio/beat 2.wav" },
+    { name: "Rage Trap Dist", type: "trap", image: "assets/beats/img119.jpg", audio: "assets/audio/trap futurista 155.wav" },
+    { name: "Trap Snare - Kisses", type: "trap", image: "assets/beats/img118.jpg", audio: "assets/audio/TRAP FERKIIK.wav" },
     { name: "Hoodtrap", type: "trap", image: "assets/beats/img33.jpg", audio: "assets/audio/HOODTRAP.wav" },
     { name: "Pills Trap vibes", type: "trap", image: "assets/beats/img55.jpg", audio: "assets/audio/slowtrap 99bpm 9d10.wav" },
     { name: "DangerDrill", type: "drill", image: "assets/beats/img44.jpg", audio: "assets/audio/drillllll.wav" },
+    { name: "Type BG - oldwave", type: "trap", image: "assets/beats/img10.jpg", audio: "assets/audio/future.mp3" },
     { name: "loving - rnb", type: "rnb", image: "assets/beats/img66.jpg", audio: "assets/audio/rnb niggusta.wav" },
     { name: "p*t4r14", type: "funk", image: "assets/beats/img77.jpg", audio: "assets/audio/type funk smoke x ig.wav" },
+    { name: "BoomBap or Trap?", type: "trap", image: "assets/beats/img11.jpg", audio: "assets/audio/beat 1.mp3" },
     { name: "TrapFunk - respeita", type: "trap", image: "assets/beats/img88.jpg", audio: "assets/audio/type funk smoke x ig.wav" },
     { name: "DarkTrap future", type: "trap", image: "assets/beats/img99.jpg", audio: "assets/audio/future new.mp3" },
-    { name: "Type BG - oldwave", type: "trap", image: "assets/beats/img10.jpg", audio: "assets/audio/future.mp3" },
     { name: "Type Travis Scott - dont care", type: "trap", image: "assets/beats/img111.jpg", audio: "assets/audio/guitar 130bpm_Master.wav" },
     { name: "fucklove drill", type: "drill", image: "assets/beats/img112.jpg", audio: "assets/audio/gust.mp3" },
+    { name: "Funk Bailão - Remix", type: "funk", image: "assets/beats/img22.jpg", audio: "assets/audio/beat 2.wav" },
     { name: "Ye Dril no love", type: "drill", image: "assets/beats/img113.jpg", audio: "assets/audio/drill.mp3" },
     { name: "Type TrapFunk Gold", type: "funk", image: "assets/beats/img114.jpg", audio: "assets/audio/funkreggaeton.mp3" },
     { name: "Plugg Type Robin", type: "trap", image: "assets/beats/img115.png", audio: "assets/audio/pluggg wav.wav" },
     { name: "LowTrap Vibes", type: "trap", image: "assets/beats/img116.jpg", audio: "assets/audio/beatlento.wav" },
-    { name: "SlowTrap Again", type: "drill", image: "assets/beats/img117.jpg", audio: "assets/audio/slowtrap 99bpm 9d10.wav" },
+    { name: "SlowTrap Again", type: "trap", image: "assets/beats/img117.jpg", audio: "assets/audio/slowtrap 99bpm 9d10.wav" },
+    
   ];
 
   const grid = document.getElementById("beatsGrid");
