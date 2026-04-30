@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {name: "Type Playboy Carti - Rainbow", type: "trap", image: "assets/beats/img204.jpg", audio: "assets/audio/trapp2.wav" },
     { name: "Type Don Toliver - Cobraz", type: "trap", image: "assets/beats/img200.jpg", audio: "assets/audio/BEAT COBRAZ.wav" },
     { name: "Rage Trap Dist", type: "trap", image: "assets/beats/img119.jpg", audio: "assets/audio/trap futurista 155.wav" },
+    { name: "Funk Bailão - Beat", type: "trap", image: "assets/beats/img211.jpg", audio: "assets/audio/FunkBEAT.wav" },
     { name: "TRAP LIKE A DREAM - (sample music)", type: "trap", image: "assets/beats/img201.jpg", audio: "assets/audio/LIKE A DREAM.wav" },
     { name: "Hoodtrap", type: "trap", image: "assets/beats/img33.jpg", audio: "assets/audio/HOODTRAP - Copia.wav" },
     { name: "Pills Trap vibes", type: "trap", image: "assets/beats/img55.jpg", audio: "assets/audio/slowtrap 99bpm 9d10.wav" },
