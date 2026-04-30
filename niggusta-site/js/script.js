@@ -1,13 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   const beats = [
+    {name: "Type Playboy Carti - Rainbow", type: "trap", image: "assets/beats/img204.jpg", audio: "assets/audio/trapp2.wav" },
     { name: "Type Don Toliver - Cobraz", type: "trap", image: "assets/beats/img200.jpg", audio: "assets/audio/BEAT COBRAZ.wav" },
     { name: "Rage Trap Dist", type: "trap", image: "assets/beats/img119.jpg", audio: "assets/audio/trap futurista 155.wav" },
     { name: "Trap Snare - Kisses", type: "trap", image: "assets/beats/img118.jpg", audio: "assets/audio/TRAP FERKIIK.wav" },
     { name: "TRAP LIKE A DREAM - (sample music)", type: "trap", image: "assets/beats/img201.jpg", audio: "assets/audio/LIKE A DREAM.wav" },
     { name: "Hoodtrap", type: "trap", image: "assets/beats/img33.jpg", audio: "assets/audio/HOODTRAP.wav" },
     { name: "Pills Trap vibes", type: "trap", image: "assets/beats/img55.jpg", audio: "assets/audio/slowtrap 99bpm 9d10.wav" },
-    { name: "Boombap - streets", type: "trap", image: "assets/beats/img200.jpg", audio: "assets/audio/beat boombap neww.wav" },
+    { name: "Boombap - streets", type: "trap", image: "assets/beats/img203.jpg", audio: "assets/audio/beat boombap neww.wav" },
     { name: "DangerDrill", type: "drill", image: "assets/beats/img44.jpg", audio: "assets/audio/drillllll.wav" },
     { name: "Type BG - oldwave", type: "trap", image: "assets/beats/img10.jpg", audio: "assets/audio/future.mp3" },
     { name: "loving - rnb", type: "rnb", image: "assets/beats/img66.jpg", audio: "assets/audio/rnb niggusta.wav" },

@@ -4,14 +4,22 @@ body{
   color:#fff;
   font-family:'Inter', sans-serif;
   margin:0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 /* NAVBAR */
 header{
   display:flex;
   justify-content:space-between;
-  padding:20px;
-  background:#000;
+  align-items:center;
+  padding:20px 40px;
+  background:rgba(0,0,0,0.85);
+  backdrop-filter: blur(10px);
+  position:sticky;
+  top:0;
+  z-index:1000;
+  border-bottom:1px solid rgba(255,255,255,0.05);
 }
 
 .logo{
@@ -26,6 +34,7 @@ nav a{
   color:#9ca3af;
   text-decoration:none;
   transition:0.3s;
+  font-size:14px;
 }
 
 nav a:hover{
@@ -49,18 +58,19 @@ nav a:hover{
   justify-content:center;
   box-shadow:
     0 0 40px rgba(124,58,237,0.5),
-    0 0 80px rgba(124,58,237,0.3);
+    0 0 90px rgba(124,58,237,0.25);
   animation: float 4s ease-in-out infinite;
 }
 
 .hero-img::before{
   content:"";
   position:absolute;
-  inset:-8px;
+  inset:-10px;
   border-radius:50%;
   background:linear-gradient(135deg,#6d28d9,#7c3aed);
-  filter:blur(8px);
+  filter:blur(12px);
   z-index:-1;
+  opacity:0.8;
 }
 
 .hero-img img{
@@ -72,16 +82,18 @@ nav a:hover{
 
 .hero-title{
   font-family:'Orbitron', sans-serif;
-  font-size:36px;
+  font-size:40px;
   font-weight:700;
   margin-top:30px;
+  letter-spacing:1px;
 }
 
 .hero-text{
   color:#9ca3af;
   font-size:16px;
-  max-width:500px;
+  max-width:520px;
   margin:15px auto;
+  line-height:1.5;
 }
 
 /* BOTÃO */
@@ -93,12 +105,13 @@ nav a:hover{
   text-decoration:none;
   font-weight:500;
   transition:0.3s;
-  box-shadow:0 0 15px rgba(124,58,237,0.4);
+  box-shadow:0 0 20px rgba(124,58,237,0.35);
+  display:inline-block;
 }
 
 .btn:hover{
   transform:scale(1.05);
-  box-shadow:0 0 25px rgba(124,58,237,0.7);
+  box-shadow:0 0 30px rgba(124,58,237,0.7);
 }
 
 /* SEÇÕES */
@@ -110,6 +123,7 @@ nav a:hover{
 .section-title{
   font-family:'Orbitron', sans-serif;
   font-size:28px;
+  margin-bottom:20px;
 }
 
 /* GRID GERAL */
@@ -121,15 +135,17 @@ nav a:hover{
 }
 
 .grid div{
-  background:#111;
+  background:rgba(17,17,17,0.8);
   padding:25px;
-  border-radius:12px;
+  border-radius:14px;
   max-width:250px;
   transition:0.3s;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .grid div:hover{
-  transform:translateY(-5px);
+  transform:translateY(-6px);
+  border-color:rgba(124,58,237,0.3);
 }
 
 /* FILTROS */
@@ -144,7 +160,7 @@ nav a:hover{
 .filters button{
   background:#111;
   color:#aaa;
-  border:none;
+  border:1px solid rgba(255,255,255,0.05);
   padding:10px 15px;
   border-radius:20px;
   cursor:pointer;
@@ -154,10 +170,12 @@ nav a:hover{
 .filters button:hover{
   background:#7c3aed;
   color:#fff;
+  border-color:#7c3aed;
+  transform:translateY(-2px);
 }
 
 /* =========================
-   BEATS GRID (DESKTOP)
+   BEATS GRID
 ========================= */
 
 .beats-grid{
@@ -167,30 +185,41 @@ nav a:hover{
   padding:40px;
 }
 
+/* CARD */
 .beat-card{
-  background:#111;
-  border-radius:12px;
+  background:rgba(17,17,17,0.85);
+  border-radius:14px;
   padding:15px;
   text-align:center;
   transition:0.3s;
+  border:1px solid rgba(255,255,255,0.05);
 }
 
 .beat-card:hover{
-  transform:translateY(-6px) scale(1.02);
-  box-shadow:0 10px 25px rgba(124,58,237,0.25);
+  transform:translateY(-8px);
+  box-shadow:0 15px 35px rgba(124,58,237,0.25);
+  border-color:rgba(124,58,237,0.4);
 }
 
+/* IMAGE */
 .beat-img{
   position:relative;
+  overflow:hidden;
+  border-radius:10px;
 }
 
 .beat-img img{
   width:100%;
   height:160px;
   object-fit:cover;
-  border-radius:10px;
+  transition:0.4s;
 }
 
+.beat-card:hover .beat-img img{
+  transform:scale(1.08);
+}
+
+/* OVERLAY */
 .overlay{
   position:absolute;
   inset:0;
@@ -207,22 +236,25 @@ nav a:hover{
   opacity:1;
 }
 
+/* PLAY BUTTON */
 .play-btn{
   background:#7c3aed;
   border:none;
   color:#fff;
   font-size:20px;
-  width:50px;
-  height:50px;
+  width:55px;
+  height:55px;
   border-radius:50%;
   cursor:pointer;
   transition:0.3s;
+  box-shadow:0 0 15px rgba(124,58,237,0.4);
 }
 
 .play-btn:hover{
-  transform:scale(1.1);
+  transform:scale(1.15);
 }
 
+/* PLAYER */
 .player{
   display:flex;
   align-items:center;
@@ -238,6 +270,7 @@ nav a:hover{
   height:4px;
   background:#333;
   border-radius:10px;
+  cursor:pointer;
 }
 
 /* ANIMAÇÃO */
@@ -247,7 +280,7 @@ nav a:hover{
 }
 
 /* =========================
-   MOBILE (CORRIGIDO E SIMPLES)
+   MOBILE
 ========================= */
 
 @media (max-width: 768px) {
@@ -279,7 +312,6 @@ nav a:hover{
     font-size: 30px;
   }
 
-  /* 2 beats por linha no celular */
   .beats-grid {
     grid-template-columns: repeat(2, 1fr) !important;
     gap: 15px;
@@ -291,17 +323,17 @@ nav a:hover{
   }
 
   .beat-img img {
-    height: 160px;
+    height: 150px;
   }
 
   .play-btn {
     width: 50px;
     height: 50px;
-    font-size: 20px;
+    font-size: 18px;
   }
 
   .filters button {
     font-size: 14px;
-    padding: 12px 16px;
+    padding: 10px 14px;
   }
 }
