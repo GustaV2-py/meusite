@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const beats = [
     {name: "Type Labrinth - The Way", type: "trap", image: "assets/beats/img205p.jpg", audio: "assets/audio/10s10.wav" },
+    {name: "Real G - Trap", type: "trap", image: "assets/beats/img210.jpg", audio: "assets/audio/saxxx.wav" },
     {name: "Type Playboy Carti - Rainbow", type: "trap", image: "assets/beats/img204.jpg", audio: "assets/audio/trapp2.wav" },
     { name: "Type Don Toliver - Cobraz", type: "trap", image: "assets/beats/img200.jpg", audio: "assets/audio/BEAT COBRAZ.wav" },
     { name: "Rage Trap Dist", type: "trap", image: "assets/beats/img119.jpg", audio: "assets/audio/trap futurista 155.wav" },
