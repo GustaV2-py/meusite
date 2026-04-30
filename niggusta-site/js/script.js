@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "DangerDrill", type: "drill", image: "assets/beats/img44.jpg", audio: "assets/audio/drillllll.wav" },
     { name: "Type BG - oldwave", type: "trap", image: "assets/beats/img10.jpg", audio: "assets/audio/future.mp3" },
     { name: "loving - rnb", type: "rnb", image: "assets/beats/img66.jpg", audio: "assets/audio/rnb niggusta.wav" },
+    { name: "SlowTrap Sax - Choices", type: "trap", image: "assets/beats/img206.jpg", audio: "assets/audio/vocal trap.wav" },
     { name: "p*t4r14", type: "funk", image: "assets/beats/img77.jpg", audio: "assets/audio/type funk smoke x ig.wav" },
     { name: "Type Lil Uzi - mario bros", type: "trap", image: "assets/beats/img202.jpg", audio: "assets/audio/mario bros.wav" },
     { name: "BoomBap or Trap?", type: "trap", image: "assets/beats/img11.jpg", audio: "assets/audio/beat 1.mp3" },
