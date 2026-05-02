@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     {name: "Type Gunna x Migos - 4Real - DarkTrap", type: "trap", image: "assets/beats/img210.jpg", audio: "assets/audio/saxxx.wav" },
     {name: "Type Mainstreet - Gangsta - TrapPlug", type: "trap", image: "assets/beats/img213.jpg", audio: "assets/audio/trap bom.wav" },
     {name: "Type Playboy Carti - Rainbow - RageTrap", type: "trap", image: "assets/beats/img204.jpg", audio: "assets/audio/trapp2.wav" },
+    { name: "Type Gunna x Don Toliver - Invencible - TrapVibe", type: "trap", image: "assets/beats/img213.jpg", audio: "assets/audio/alpra.wav" },
     { name: "Type Don Toliver - Cobraz - TrapVibe", type: "trap", image: "assets/beats/img200.jpg", audio: "assets/audio/BEAT COBRAZ.wav" },
     { name: "Type Lil Uzi - Rage Trap Dist", type: "trap", image: "assets/beats/img119.jpg", audio: "assets/audio/trap futurista 155.wav" },
     { name: "Funk Bailão - Beat", type: "funk", image: "assets/beats/img211.jpg", audio: "assets/audio/FunkBEAT.wav" },
@@ -28,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Type King Von x Digga D - Ye Dril no love", type: "drill", image: "assets/beats/img113.jpg", audio: "assets/audio/drill.mp3" },
     { name: "Type BadBunny - TrapFunk Gold", type: "funk", image: "assets/beats/img114.jpg", audio: "assets/audio/funkreggaeton.mp3" },
     { name: "Type EsDeeKid - Plugg Robin", type: "trap", image: "assets/beats/img115.png", audio: "assets/audio/pluggg wav.wav" },
-    { name: "Type Gunna x Don Toliver - SlowTrap Again", type: "trap", image: "assets/beats/img117.jpg", audio: "assets/audio/slowtrap 99bpm 9d10.wav" },
+    
     
   ];
 
