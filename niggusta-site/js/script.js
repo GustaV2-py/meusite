@@ -17,10 +17,13 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Type Central Cee - DangerDrill", type: "drill", image: "assets/beats/img44.jpg", audio: "assets/audio/drillllll.wav" },
     { name: "Type BG - oldwave - TrapPlug", type: "trap", image: "assets/beats/img10.jpg", audio: "assets/audio/ffuture.wav" },
     { name: "loving - rnb", type: "rnb", image: "assets/beats/img66.jpg", audio: "assets/audio/rnb niggusta.wav" },
+    { name: "Fogo no Puteiro - Remix (Don Toliver)", type: "funk", image: "assets/beats/fogo.png", audio: "assets/audio/FOGO NO PUTEIRO.wav" },
+    { name: "PIPOTECH", type: "psytrance", image: "assets/beats/pipotech.jpg", audio: "assets/audio/pipotech.wav" },
     { name: "Type Playboy Carti x Lil Uzi - SlowTrap Sax - Choices", type: "trap", image: "assets/beats/img206.jpg", audio: "assets/audio/vocal trap.wav" },
     { name: "Type Lil Uzi - mario bros - TrapVibe", type: "trap", image: "assets/beats/img202.jpg", audio: "assets/audio/mario bros.wav" },
     { name: "BoomBap or Trap?", type: "trap", image: "assets/beats/img11.jpg", audio: "assets/audio/beat 1.mp3" },
     { name: "Trap Snare - Kisses", type: "trap", image: "assets/beats/img118.jpg", audio: "assets/audio/TRAP FERKIIK.wav" },
+    { name: "Eletrophonk", type: "funk", image: "assets/beats/img214.jpg", audio: "assets/audio/Funk Cowbell.mp3" },
     { name: "TrapFunk - respeita", type: "trap", image: "assets/beats/img88.jpg", audio: "assets/audio/smoke x ig.wav" },
     { name: "Type MetrooBoomim x 21 Savage - future - DarkTrap", type: "trap", image: "assets/beats/img99.jpg", audio: "assets/audio/future new.mp3" },
     { name: "Type Travis Scott x Gunna - dont care - TrapVibe", type: "trap", image: "assets/beats/img111.jpg", audio: "assets/audio/guitar 130bpm_Master.wav" },
@@ -29,8 +32,9 @@ document.addEventListener("DOMContentLoaded", () => {
     { name: "Type King Von x Digga D - Ye Dril no love", type: "drill", image: "assets/beats/img113.jpg", audio: "assets/audio/drill.mp3" },
     { name: "Type BadBunny - TrapFunk Gold", type: "funk", image: "assets/beats/img114.jpg", audio: "assets/audio/funkreggaeton.mp3" },
     { name: "Type EsDeeKid - Plugg Robin", type: "trap", image: "assets/beats/img115.png", audio: "assets/audio/pluggg wav.wav" },
-    
-    
+    { name: "See what's inside you", type: "psytrance", image: "assets/beats/217.jpg", audio: "assets/audio/PSY1.mp3" },
+    { name: "King Of The Pop", type: "pop", image: "assets/beats/img215.jpg", audio: "assets/audio/pop1.mp3" },
+    { name: "King Of The Pop #2", type: "pop", image: "assets/beats/img216.jpg", audio: "assets/audio/pop2.mp3" },
   ];
 
   const grid = document.getElementById("beatsGrid");
@@ -38,17 +42,17 @@ document.addEventListener("DOMContentLoaded", () => {
   let currentAudio = null;
   let currentBtn = null;
 
-  // =========================
-  // INTRO GLOBAL (CORRIGIDO)
-  // =========================
+  // 🔥 NOVO
+  let currentIndex = 0;
+  let currentList = [];
+
   let introAudio = new Audio("assets/audio/HOODTRAP ROCKSTAR.wav");
   introAudio.volume = 0.2;
   introAudio.loop = true;
 
   function startIntro() {
     const isBeatsPage = window.location.pathname.includes("beats");
-
-    if (isBeatsPage) return; // NÃO toca na página beats
+    if (isBeatsPage) return;
 
     introAudio.play().catch(() => {
       document.addEventListener("click", () => introAudio.play(), { once: true });
@@ -65,9 +69,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // =========================
-  // FORMAT TIME
-  // =========================
   function formatTime(sec) {
     if (!sec) return "0:00";
     const m = Math.floor(sec / 60);
@@ -75,9 +76,6 @@ document.addEventListener("DOMContentLoaded", () => {
     return `${m}:${s}`;
   }
 
-  // =========================
-  // STOP AUDIO
-  // =========================
   function stopCurrentAudio() {
     if (currentAudio) {
       currentAudio.pause();
@@ -88,13 +86,11 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // =========================
-  // RENDER BEATS
-  // =========================
   function render(list) {
+    currentList = list; // 🔥 importante
     grid.innerHTML = "";
 
-    list.forEach((beat) => {
+    list.forEach((beat, index) => {
       const card = document.createElement("div");
       card.className = "beat-card";
 
@@ -126,10 +122,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
       btn.onclick = () => {
 
-        // 🔥 PARA INTRO NA PRIMEIRA INTERAÇÃO
         stopIntro();
 
-        // troca música
+        currentIndex = index; // 🔥 salva posição
+
         if (currentAudio && currentAudio !== audio) {
           stopCurrentAudio();
         }
@@ -150,10 +146,19 @@ document.addEventListener("DOMContentLoaded", () => {
         current.textContent = formatTime(audio.currentTime);
       });
 
+      // 🔥 AUTOPLAY PRÓXIMA
       audio.addEventListener("ended", () => {
-        btn.textContent = "▶";
-        progress.value = 0;
-        current.textContent = "0:00";
+
+        let nextIndex = currentIndex + 1;
+
+        if (nextIndex >= currentList.length) {
+          nextIndex = 0;
+        }
+
+        const nextCard = grid.children[nextIndex];
+        const nextBtn = nextCard.querySelector(".play-btn");
+
+        nextBtn.click();
       });
 
       progress.addEventListener("input", () => {
@@ -164,9 +169,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // =========================
-  // FILTER
-  // =========================
   window.filterBeats = function (type) {
     stopCurrentAudio();
 
@@ -177,6 +179,5 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // INIT
   render(beats);
 });
